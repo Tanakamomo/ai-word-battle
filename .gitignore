@@ -1,0 +1,43 @@
+# Godot 4 用 .gitignore
+
+# Godotが自動生成するファイル
+.import/
+export.cfg
+export_presets.cfg
+
+# ビルド成果物
+.mono/
+data_*/
+mono_crash.*.json
+
+# 一時ファイル
+*.tmp
+*.log
+
+# プラットフォーム固有
+.DS_Store
+Thumbs.db
+
+# IDE/エディタ
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# バックアップファイル
+*.backup
+*~
+
+# OS固有
+*.lnk
+
+# プロジェクト固有（必要に応じて追加）
+# builds/
+# screenshots/
+# notes/
+
+# 大きなアセットファイル（必要に応じて）
+# *.wav
+# *.ogg
+# *.mp3
+# *.mp4
