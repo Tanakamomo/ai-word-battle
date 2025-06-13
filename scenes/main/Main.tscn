@@ -1,0 +1,145 @@
+[gd_scene load_steps=2 format=3 uid="uid://dnl05acdu2s6w"]
+
+[ext_resource type="Script" uid="uid://cwpvquwehpek1" path="res://scripts/managers/Main.gd" id="1_u1xfj"]
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_u1xfj")
+
+[node name="HandArea" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="BattleUI" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="EnemyArea" type="Control" parent="BattleUI"]
+custom_minimum_size = Vector2(0, 800)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+
+[node name="EnemySprite" type="TextureRect" parent="BattleUI/EnemyArea"]
+custom_minimum_size = Vector2(500, 500)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="EnemyHP" type="ProgressBar" parent="BattleUI/EnemyArea"]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 0
+offset_left = 300.0
+offset_top = 200.0
+offset_right = 800.0
+offset_bottom = 227.0
+
+[node name="EnemyName" type="Label" parent="BattleUI/EnemyArea"]
+layout_mode = 0
+offset_left = 300.0
+offset_top = 500.0
+offset_right = 340.0
+offset_bottom = 523.0
+
+[node name="LogArea" type="Control" parent="BattleUI"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="BattleUI/LogArea"]
+custom_minimum_size = Vector2(0, 300)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0.494118)
+
+[node name="ActionLog" type="RichTextLabel" parent="BattleUI/LogArea"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+bbcode_enabled = true
+
+[node name="AIThinking" type="Label" parent="BattleUI/LogArea"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="PlayerArea" type="Control" parent="BattleUI"]
+custom_minimum_size = Vector2(0, 800)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="HandSlots" type="HBoxContainer" parent="BattleUI/PlayerArea"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="CardSlot1" type="Control" parent="BattleUI/PlayerArea/HandSlots"]
+layout_mode = 2
+
+[node name="CardSlot2" type="Control" parent="BattleUI/PlayerArea/HandSlots"]
+layout_mode = 2
+
+[node name="CardSlot3" type="Control" parent="BattleUI/PlayerArea/HandSlots"]
+layout_mode = 2
+
+[node name="CardSlot4" type="Control" parent="BattleUI/PlayerArea/HandSlots"]
+layout_mode = 2
+
+[node name="CardSlot5" type="Control" parent="BattleUI/PlayerArea/HandSlots"]
+layout_mode = 2
+
+[node name="CardSlot6" type="Control" parent="BattleUI/PlayerArea/HandSlots"]
+layout_mode = 2
+
+[node name="CardSlot7" type="Control" parent="BattleUI/PlayerArea/HandSlots"]
+layout_mode = 2
+
+[node name="ActionButtons" type="Control" parent="BattleUI/PlayerArea"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="PlayerStats" type="Control" parent="BattleUI/PlayerArea"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0

@@ -11,8 +11,14 @@ config_version=5
 [application]
 
 config/name="ai-word-battle"
+run/main_scene="uid://dnl05acdu2s6w"
 config/features=PackedStringArray("4.4", "Mobile")
 config/icon="res://icon.svg"
+
+[display]
+
+window/size/viewport_width=1080
+window/size/viewport_height=1920
 
 [rendering]
 

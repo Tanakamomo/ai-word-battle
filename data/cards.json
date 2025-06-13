@@ -1,0 +1,32 @@
+{
+	"cards": [
+		{
+			"id": "attack_01",
+			"word": "攻撃",
+			"type": 0,
+			"rarity": 0,
+			"description": "基本的な攻撃アクション"
+		},
+		{
+			"id": "fire_01",
+			"word": "炎",
+			"type": 1,
+			"rarity": 0,
+			"description": "火属性を付与"
+		},
+		{
+			"id": "all_01",
+			"word": "全体",
+			"type": 2,
+			"rarity": 1,
+			"description": "全ての対象に効果"
+		},
+		{
+			"id": "strong_01",
+			"word": "強力",
+			"type": 3,
+			"rarity": 1,
+			"description": "効果を強化"
+		}
+	]
+}

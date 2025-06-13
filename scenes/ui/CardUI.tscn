@@ -1,0 +1,57 @@
+[gd_scene load_steps=4 format=3 uid="uid://v5dpgk7t04i8"]
+
+[ext_resource type="Script" uid="uid://c5vcoj720iayx" path="res://scripts/ui/CardUI.gd" id="1_edfvi"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ob8v0"]
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_lk56f"]
+font_color = Color(0, 0, 0, 1)
+
+[node name="CardUi" type="Control" node_paths=PackedStringArray("shortcut_context")]
+custom_minimum_size = Vector2(120, 160)
+layout_mode = 3
+mouse_filter = 1
+shortcut_context = NodePath("Background")
+script = ExtResource("1_edfvi")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.9, 0.9, 0.9, 1)
+
+[node name="WordLabel" type="Label" parent="."]
+custom_minimum_size = Vector2(100, 40)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -0.5
+offset_top = -11.5
+offset_right = 0.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Attack"
+label_settings = SubResource("LabelSettings_ob8v0")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PowerLabel" type="Label" parent="."]
+custom_minimum_size = Vector2(100, 20)
+layout_mode = 0
+offset_left = 10.0
+offset_top = 120.0
+offset_right = 110.0
+offset_bottom = 143.0
+text = "Power: 5"
+label_settings = SubResource("LabelSettings_lk56f")
+horizontal_alignment = 1
+vertical_alignment = 1
