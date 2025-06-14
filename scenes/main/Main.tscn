@@ -1,26 +1,41 @@
-[gd_scene load_steps=2 format=3 uid="uid://dnl05acdu2s6w"]
+[gd_scene load_steps=11 format=3 uid="uid://dnl05acdu2s6w"]
 
 [ext_resource type="Script" uid="uid://cwpvquwehpek1" path="res://scripts/managers/Main.gd" id="1_u1xfj"]
+[ext_resource type="Texture2D" uid="uid://d4fbvygobuwvx" path="res://assets/images/enemys/en_001.JPG" id="2_nha0i"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_q24mn"]
+font_size = 60
+
+[sub_resource type="Theme" id="Theme_gyg6b"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dc040"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1rhdn"]
+bg_color = Color(1, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_nha0i"]
+font_size = 40
+
+[sub_resource type="Theme" id="Theme_q24mn"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gyg6b"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sjxhf"]
+bg_color = Color(1, 0, 0, 1)
 
 [node name="Main" type="Control"]
+clip_contents = true
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 script = ExtResource("1_u1xfj")
-
-[node name="HandArea" type="HBoxContainer" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
 
 [node name="BattleUI" type="Control" parent="."]
 visible = false
@@ -68,36 +83,6 @@ offset_top = 500.0
 offset_right = 340.0
 offset_bottom = 523.0
 
-[node name="LogArea" type="Control" parent="BattleUI"]
-layout_mode = 1
-anchors_preset = 14
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="ColorRect" type="ColorRect" parent="BattleUI/LogArea"]
-custom_minimum_size = Vector2(0, 300)
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(1, 1, 1, 0.494118)
-
-[node name="ActionLog" type="RichTextLabel" parent="BattleUI/LogArea"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-bbcode_enabled = true
-
-[node name="AIThinking" type="Label" parent="BattleUI/LogArea"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
-
 [node name="PlayerArea" type="Control" parent="BattleUI"]
 custom_minimum_size = Vector2(0, 800)
 layout_mode = 1
@@ -143,3 +128,126 @@ offset_bottom = 40.0
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -54.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="EnemyArea" type="Control" parent="VBoxContainer"]
+custom_minimum_size = Vector2(1080, 1080)
+layout_mode = 2
+
+[node name="EnemySprite" type="TextureRect" parent="VBoxContainer/EnemyArea"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_nha0i")
+
+[node name="EnemyName" type="Label" parent="VBoxContainer/EnemyArea"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -47.0
+offset_right = 47.0
+offset_bottom = 23.0
+grow_horizontal = 2
+text = "ファイアドラゴン"
+label_settings = SubResource("LabelSettings_q24mn")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="EnemyHP" type="ProgressBar" parent="VBoxContainer/EnemyArea"]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -250.0
+offset_top = -27.0
+offset_right = 250.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = SubResource("Theme_gyg6b")
+theme_override_styles/background = SubResource("StyleBoxFlat_dc040")
+theme_override_styles/fill = SubResource("StyleBoxFlat_1rhdn")
+value = 100.0
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="PlayerArea" type="VBoxContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/PlayerArea"]
+layout_mode = 2
+text = "あなた"
+label_settings = SubResource("LabelSettings_nha0i")
+
+[node name="PlayerHP" type="ProgressBar" parent="VBoxContainer/PlayerArea"]
+layout_mode = 2
+theme = SubResource("Theme_q24mn")
+theme_override_styles/background = SubResource("StyleBoxFlat_gyg6b")
+theme_override_styles/fill = SubResource("StyleBoxFlat_sjxhf")
+value = 100.0
+
+[node name="LogArea" type="Control" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 300)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ColorRect" type="ColorRect" parent="VBoxContainer/LogArea"]
+custom_minimum_size = Vector2(0, 300)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0.494118)
+
+[node name="ActionLog" type="RichTextLabel" parent="VBoxContainer/LogArea"]
+custom_minimum_size = Vector2(1080, 300)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+bbcode_enabled = true
+text = "111111"
+
+[node name="AIThinking" type="Label" parent="VBoxContainer/LogArea"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="HandArea" type="HBoxContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+mouse_filter = 2
+
+[node name="ColorRect" type="ColorRect" parent="VBoxContainer/HandArea"]
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(0.533, 0.533, 0.533, 0.492)
+
+[node name="ExecuteButton" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+text = "Execute Command"

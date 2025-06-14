@@ -1,7 +1,5 @@
 res://scenes/main/Main.tscn
-res://scripts/cards/Card.gd
-res://scripts/ui/CardUI.gd
-res://scripts/managers/AIManager.gd
-res://data/cards.json
-res://scenes/ui/CardUI.tscn
 res://scripts/managers/Main.gd
+res://scenes/ui/CardUI.tscn
+res://autoload/AIManager.gd
+res://scripts/ui/CardUI.gd

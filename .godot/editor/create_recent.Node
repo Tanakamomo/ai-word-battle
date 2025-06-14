@@ -1,8 +1,11 @@
+VBoxContainer
+ProgressBar
+Label
+Control
+HSeparator
+TextureRect
+ColorRect
+Button
 HBoxContainer
 BoxContainer
-Control
-Label
-ColorRect
 RichTextLabel
-ProgressBar
-TextureRect

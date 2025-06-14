@@ -63,5 +63,5 @@ func _input(event):
 		global_position = event.global_position - drag_offset
 		
 		# ドラッグ中の位置をメインに通知
-		get_parent().get_parent()._on_card_dragging(self, event.global_position)
+		get_parent().get_parent().get_parent()._on_card_dragging(self, event.global_position)
 		
